@@ -1,0 +1,28 @@
+/** Typeahead **/
+
+.dyn-typeahead .dropdown-menu {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.dyn-typeahead .btn {
+  padding: 0;
+}
+
+.dyn-typeahead .btn .fa {
+  width: 35px;
+  height: 32px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.dyn-typeahead input.form-control {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+
+.dyn-typeahead .form-control[disabled],
+.dyn-typeahead .form-control[readonly] {
+  background-color: #eee !important;
+  opacity: 1;
+}

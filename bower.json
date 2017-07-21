@@ -1,0 +1,22 @@
+{
+  "name": "dyn-typeahead",
+  "moduleType": [
+    "globals"
+  ],
+  "authors": [
+    "Dynamix Software"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "angular": "~1.5.0",
+      "angular-bootstrap": "~1.2.x",
+      "dyn-domains": "~1.1.0"
+  }
+}

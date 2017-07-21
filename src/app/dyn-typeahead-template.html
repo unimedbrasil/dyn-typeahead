@@ -1,0 +1,37 @@
+<div class="input-group dyn-typeahead">
+    <input ng-disabled="dynTypeaheadCtrl.disabled || dynTypeaheadCtrl.loading" type="text" class="form-control"
+        ng-model="dynTypeaheadCtrl.ngModel" placeholder="{{dynTypeaheadCtrl.placeholder}}"
+        uib-typeahead="item[dynTypeaheadCtrl.key] as item[dynTypeaheadCtrl.value] for item in dynTypeaheadCtrl.filterValues($viewValue)"
+        typeahead-loading="dynTypeaheadCtrl.loading" typeahead-no-results="dynTypeaheadCtrl.noResults"
+        typeahead-show-hint="true" typeahead-min-length="0" focus-me="dynTypeaheadCtrl.focusTypeahead"
+        typeahead-input-formatter="dynTypeaheadCtrl.formatLabel($model)" typeahead-on-select="dynTypeaheadCtrl.onSelectValue($item, $model, $label)"/>
+
+    <div class="input-group-btn">
+        <button ng-if="!dynTypeaheadCtrl.loading && !dynTypeaheadCtrl.noResults && !dynTypeaheadCtrl.ngModel"
+                ng-click="dynTypeaheadCtrl.setFocus()"
+                ng-disabled="dynTypeaheadCtrl.disabled || dynTypeaheadCtrl.loading"
+                type="button"
+                class="btn btn-default">
+            <i class="fa fa-chevron-down"></i>
+        </button>
+        <button ng-if="dynTypeaheadCtrl.loading"
+                ng-disabled="dynTypeaheadCtrl.disabled || dynTypeaheadCtrl.loading"
+                type="button"
+                class="btn btn-default">
+            <i class="fa fa-refresh fa-spin"></i>
+        </button>
+        <button ng-if="dynTypeaheadCtrl.noResults"
+                ng-disabled="dynTypeaheadCtrl.disabled || dynTypeaheadCtrl.loading"
+                type="button"
+                class="btn btn-default">
+            <i class="fa fa-exclamation-triangle"></i>
+        </button>
+        <button ng-if="!dynTypeaheadCtrl.loading && !dynTypeaheadCtrl.noResults && dynTypeaheadCtrl.ngModel"
+                ng-click="dynTypeaheadCtrl.cleanTypeahead()"
+                ng-disabled="dynTypeaheadCtrl.disabled || dynTypeaheadCtrl.loading"
+                type="button"
+                class="btn btn-default">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+</div>
